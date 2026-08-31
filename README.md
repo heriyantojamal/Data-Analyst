@@ -1,118 +1,250 @@
-# 📊 Customer Purchasing Behaviour Analysis – Power BI
+# Power BI Customer Purchasing Behaviour Analysis
 
-## Business Analytics Capstone Project
+## Project Overview
 
-This project was completed as part of my Data Analytics training and demonstrates the development of an interactive Microsoft Power BI dashboard for analysing customer purchasing behaviour, product performance and sales trends.
+### Introduction
 
-## 🎯 Business Problem
+This project analyses **customer purchasing behaviour using Microsoft Power BI**.
 
-Customer and sales data were available, but useful business insights were difficult to identify from raw tables.
+The main objective is to transform customer and purchase data into an interactive dashboard that helps users understand:
 
-The objective was to transform the data into an interactive business intelligence dashboard that helps management understand:
+* Customer purchasing patterns
+* Sales performance
+* Product performance
+* Customer segments
+* Sales trends over time
 
-- Which customers and customer segments drive revenue
-- Which countries perform strongest
-- Which products generate the most revenue and sales volume
-- How sales and orders change over time
-- Where marketing and business resources should be focused
+The dashboard was designed to provide simple business insights that can support marketing, product and sales decisions.
 
-## 🛠️ Tools & Skills Demonstrated
+---
 
-- Microsoft Power BI
-- Power Query / Data Preparation
-- Data Cleaning & Transformation
-- Data Modelling
-- DAX Measures
-- Calculated Columns
-- Data Visualisation
-- Customer Segmentation
-- Sales & Product Analysis
-- Business Intelligence
-- Data Storytelling
+## Dataset Information
 
-## 🧹 Data Preparation
+The project uses two datasets:
 
-The project used Customer and Purchase datasets.
+### Customer Table
 
-The Purchase dataset contained 50,000 transaction records.
+The Customer table contains customer information such as:
 
-Data preparation included:
+* Customer ID
+* Gender
+* Age
+* Country
+* Income
 
-- Checking data types
-- Reviewing date and numeric fields
-- Checking missing values and duplicates
-- Creating Age Group and Income Group categories
-- Creating Year, Month Name and Month Number fields
-- Sorting month and customer segment categories correctly
+### Purchase Table
 
-A one-to-many relationship was created between the Customer and Purchase tables using `customer_id`.
+The Purchase table contains **50,000 purchase transactions** with information such as:
 
-## 📐 DAX Measures
+* Order ID
+* Customer ID
+* Product name
+* Price
+* Quantity
+* Tax
+* Shipping cost
+* Order date
+* Shipping date
 
-Key measures included:
+The two tables are connected using `customer_id`.
 
-- Total Revenue
-- Total Orders
-- Total Customers
-- Average Order Value
+---
 
-These measures respond dynamically to dashboard filters and slicers.
+## Project Objectives
 
-## 📊 Dashboard
+The main objectives of this project are to:
 
-The Power BI report contains four main analytical areas:
+* Analyse purchasing patterns by age, gender, country and income
+* Identify products with the highest revenue and sales volume
+* Analyse sales trends over time
+* Identify important customer segments
+* Provide simple business recommendations
 
-### 1. Executive Dashboard
-Provides management with an overview of revenue, customers, orders, average order value, yearly performance and country performance.
+---
 
-### 2. Customer Analysis
-Analyses customer behaviour by:
+## Data Preparation
 
-- Gender
-- Age Group
-- Income Group
-- Country
+Before creating the dashboard, the data was checked and prepared in Power BI.
 
-### 3. Product Analysis
-Compares products by:
+The main steps included:
 
-- Total Revenue
-- Quantity Sold
+* Checking data types
+* Checking date and numerical columns
+* Checking missing values and duplicates
+* Creating customer age groups
+* Creating customer income groups
+* Creating Year, Month Name and Month Number
+* Sorting months into the correct calendar order
 
-Interactive slicers allow analysis by Year, Country, Gender and Age Group.
+These steps helped prepare the data for analysis and visualisation.
 
-### 4. Sales Trend Analysis
-Examines revenue and order patterns over time to support sales and operational planning.
+---
 
-## 🔍 Key Business Insights
+## Data Model
 
-The analysis identified several useful business findings:
+A simple data model was created between the Customer and Purchase tables.
 
-- High-income customers generated the strongest revenue contribution.
-- Colombia recorded the highest total revenue and largest customer base.
-- Curtains generated the highest product revenue.
-- Sports Shoes recorded the highest quantity sold.
-- The highest-revenue product was therefore not necessarily the most frequently purchased product.
-- Monthly changes in revenue and orders can support better inventory and promotional planning.
+The relationship is:
 
-## 💡 Business Recommendations
+`Customer[customer_id] 1 → * Purchase[customer_id]`
+
+This means one customer can have multiple purchase transactions.
+
+The relationship allows customer information such as age, gender, income and country to be used when analysing sales and purchasing behaviour.
+
+---
+
+## DAX Measures
+
+Several DAX measures were created for the dashboard:
+
+* **Total Revenue** – total sales revenue
+* **Total Orders** – total number of orders
+* **Total Customers** – number of customers
+* **Average Order Value** – average spending per order
+* **Total Shipping Cost** – total shipping cost
+
+These measures automatically update when dashboard filters and slicers are used.
+
+---
+
+# Dashboard Analysis
+
+The Power BI report contains four main dashboard areas.
+
+## 1. Executive Dashboard
+
+The Executive Dashboard provides a quick overview of business performance.
+
+The main KPIs include:
+
+* **Total Revenue: $351.15M**
+* **Total Customers: 1K**
+* **Total Orders: 50K**
+* **Average Order Value: $7.02K**
+
+The dashboard also includes:
+
+* Total Revenue by Year
+* Total Revenue by Country
+
+This page provides a simple overview of overall sales performance.
+
+---
+
+## 2. Customer Analysis
+
+The Customer Analysis dashboard explores purchasing behaviour across different customer groups.
+
+The analysis includes:
+
+* Customers by Gender
+* Revenue by Income Group
+* Revenue by Age Group
+* Total Customers by Country
+
+The dashboard helps identify customer groups that contribute more strongly to overall revenue.
+
+One key observation is that the **High Income customer segment generates the highest revenue**.
+
+---
+
+## 3. Product Analysis
+
+The Product Analysis dashboard compares product performance using:
+
+* Top Products by Revenue
+* Top Products by Quantity Sold
+
+The dashboard also includes slicers for:
+
+* Year
+* Country
+* Gender
+* Age Group
+
+One interesting finding is that **Curtains generated the highest total revenue**, while **Sports Shoes recorded the highest quantity sold**.
+
+This shows that the product generating the most revenue is not always the product sold most frequently.
+
+---
+
+## 4. Sales Trend
+
+The Sales Trend dashboard analyses purchasing activity over time.
+
+The main charts include:
+
+* Orders by Month
+* Revenue by Month
+
+These charts help identify changes in sales and purchasing activity throughout the year.
+
+Interactive slicers allow the trends to be filtered by:
+
+* Year
+* Country
+* Gender
+* Age Group
+
+---
+
+# Key Findings
+
+Some of the main findings from the dashboard include:
+
+* High Income customers generate the highest revenue.
+* Customer purchasing behaviour varies across age and income groups.
+* Colombia has the highest revenue and the largest customer base.
+* Curtains generate the highest product revenue.
+* Sports Shoes have the highest quantity sold.
+* Orders and revenue change across different months of the year.
+
+These findings can help support customer targeting, product planning and sales decisions.
+
+---
+
+# Business Recommendations
 
 Based on the dashboard analysis:
 
-1. Prioritise targeted campaigns and personalised offers for high-value customer segments.
-2. Protect stock availability and margins for high-revenue products.
-3. Use promotions and bundles to encourage repeat purchases of high-volume products.
-4. Strengthen customer retention in Colombia while developing opportunities in other markets.
-5. Use monthly sales patterns to plan inventory, staffing and promotional campaigns.
+### Customer Targeting
 
-## 📁 Project File
+Focus marketing and loyalty programmes on higher-value customer segments identified through the income and age analysis.
 
-The repository includes my Power BI Business Analytics Capstone Project presentation, documenting the development process, dashboard design, analysis and recommendations.
+### Product Strategy
 
-## 👤 Author
+Maintain stock availability for high-performing products.
 
-**Mohamed Heriyanto Bin Jamal Mohamed (Heri)**
+High-revenue products such as **Curtains** can be monitored for profitability, while high-volume products such as **Sports Shoes** can be supported through promotions and product bundles.
 
-Data Analytics | Power BI | SQL | Python | Excel | UI/UX | Digital Marketing
+### Country Focus
 
-Singapore
+Colombia is an important market because it has both the highest revenue and largest customer base.
+
+The business can focus on retaining customers in Colombia while exploring growth opportunities in other countries.
+
+### Sales Planning
+
+Monthly sales trends can be used to support inventory, staffing and promotional planning.
+
+---
+
+## Project Files
+
+The repository includes:
+
+* **Power BI Dashboard (`.pbix`)** – interactive Power BI project
+* **Project Report (`.docx`)** – explanation of the analysis and dashboard development
+* **Project Presentation (`.pptx`)** – presentation of the project and findings
+* **Data Dictionary (`.pdf`)** – description of the datasets, fields and measures
+
+---
+
+## Conclusion
+
+This project demonstrates how **Microsoft Power BI** can be used to transform customer and purchase data into a simple interactive business dashboard.
+
+The analysis covers customer demographics, product performance and sales trends. DAX measures and interactive slicers were used to allow users to explore the data from different perspectives.
+
+Overall, the project provides an entry-level example of the complete Power BI analytics process, from **data preparation and modelling to dashboard development and business insights**.
