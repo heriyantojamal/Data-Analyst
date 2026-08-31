@@ -243,8 +243,4 @@ The repository includes:
 
 ## Conclusion
 
-This project demonstrates how **Microsoft Power BI** can be used to transform customer and purchase data into a simple interactive business dashboard.
-
 The analysis covers customer demographics, product performance and sales trends. DAX measures and interactive slicers were used to allow users to explore the data from different perspectives.
-
-Overall, the project provides an entry-level example of the complete Power BI analytics process, from **data preparation and modelling to dashboard development and business insights**.
